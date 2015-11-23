@@ -11,6 +11,15 @@
 		</div>
 
 	</header>
+	<main>
+	<div class = "container">
 
+	</div>
+		<h2>Test Your PHP Knowledge</h2>
+	</main>
+	<footer>
+		<div class = "container">
+		Copywrite 2015
+		</div>
 </body>
 </html>
