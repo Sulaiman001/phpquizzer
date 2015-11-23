@@ -11,6 +11,10 @@ li{
 a{
 	text-decoration:none;
 }
+label{
+	display: inline-block;
+	width:180px;
+}
 .container{
 	width:60%;
 	margin: 0 auto;
