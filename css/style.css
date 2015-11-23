@@ -36,3 +36,9 @@ a.start{
 	border:1px dotted #ccc;
 	padding: 6px 13px;
 }
+.current{
+	padding:10px;
+	background-color:#f4f4f4;
+	border:#ccc dotted 1px;
+	margin: 20px 0 10px 0;
+}
