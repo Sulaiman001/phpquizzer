@@ -43,6 +43,11 @@
 					<label>Choice #5</label>
 					<input type = "text" name = "choice4"/>
 				</p>
+				<p>					
+					<label>Correct choice #</label>
+					<input type = "number" name = "correct_choice"/>
+				</p>
+				<input type = "submit" value = "Add Question" class = ""
 			</form>
 		
 	</main>
