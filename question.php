@@ -3,6 +3,9 @@
 <?php
 	//Set question number
 	$number = (int) $_GET['n'];
+	if($number == 1){
+		$_SESSION['score'] = 0;
+	}
 
 	/*
 	*	Get Question
