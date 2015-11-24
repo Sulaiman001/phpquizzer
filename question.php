@@ -20,6 +20,13 @@
 				WHERE question_number = $number";
 	//Get results
 	$choices = $mysqli->query($query) or die($mysqli->error.__LINE__);
+
+	//Get total amount of questions
+		$query = "SELECT * FROM `questions`";
+		//Get result
+		$results = $mysqli->query($query) or die($mysqli->error._LINE_);
+		$total = $results->num_rows;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +43,7 @@
 	</header>
 	<main>
 		<div class = "container">
-			<div class = "current">Question 1 of 5</div>
+			<div class = "current">Question <?php echo $question['question_number']; ?> of <?php echo $total; ?></div>
 			<p class = "question">
 				<?php echo $question['text']; ?>
 			</p>
