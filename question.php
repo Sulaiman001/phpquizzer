@@ -2,6 +2,24 @@
 <?php
 	//Set question number
 	$number = (int) $_GET['n'];
+
+	/*
+	*	Get Question
+	*/
+	$query = "SELECT * FROM `questions`
+				WHERE question_number = $number";
+	//Get result
+	$result = $mysqli->query($query) or die($mysqli->error.__LINE__);
+	
+	$question = $result->fetch_assoc();
+	
+	/*
+	*	Get Choices
+	*/
+	$query = "SELECT * FROM `choices`
+				WHERE question_number = $number";
+	//Get results
+	$choices = $mysqli->query($query) or die($mysqli->error.__LINE__);
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,15 +38,13 @@
 		<div class = "container">
 			<div class = "current">Question 1 of 5</div>
 			<p class = "question">
-				What does php stand for?
+				<?php echo $question['text']; ?>
 			</p>
 			<form method = "post" action = "process.php">
 				<ul class = "choices">
-					<li><input name = "choice" type = "radio" value = "1"</li>PHP: Hypertext Preprocessor</li>
-					<li><input name = "choice" type = "radio" value = "1"</li>PHP: Hypertext Preprocessor</li>
-					<li><input name = "choice" type = "radio" value = "1"</li>PHP: Hypertext Preprocessor</li>
-					<li><input name = "choice" type = "radio" value = "1"</li>PHP: Hypertext Preprocessor</li>
-
+				<?php while($row = $choices->fetch_assoc()) : ?>
+					<li><input name = "choice" type = "radio" value = "<?php echo $row['id'] ?>"</li><?php echo $row['text'] ?></li>
+					<?php endwhile; ?>
 				</ul>
 				<input type = "submit" value = "submit">
 			</form>
