@@ -47,6 +47,7 @@
 					<?php endwhile; ?>
 				</ul>
 				<input type = "submit" value = "submit">
+				<input type = "hidden" name = "number" value = "<?php echo $number; ?>" />
 			</form>
 		</div>
 		
