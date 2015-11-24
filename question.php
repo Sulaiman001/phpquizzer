@@ -1,4 +1,5 @@
 <?php include 'database.php'; ?>
+<?php session_start(); ?>
 <?php
 	//Set question number
 	$number = (int) $_GET['n'];
