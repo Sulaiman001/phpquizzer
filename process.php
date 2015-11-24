@@ -3,7 +3,7 @@
 <?php
 	//check to see if the score is set
 
-	if(!isset($_SESSION['score'])){
+	if(!isset($_SESSION['score']) ){
 		$_SESSION['score'] = 0;
 
 	}
