@@ -4,6 +4,20 @@
 <?php 
 	if (isset($_POST['submit'])){
 		echo 'Form was submitted';
+		//Get post variables
+		$question_number = $_POST['question_number'];
+		$question_text = $_POST['question_text'];
+
+		//creeate an array of choices for the form
+
+		$choices = array();
+		$choices[1] = $_POST['choice1'];
+		$choices[2] = $_POST['choice2'];
+		$choices[3] = $_POST['choice3'];
+		$choices[4] = $_POST['choice4'];
+		$choices[5] = $_POST['choice5'];
+
+
 	}
 
 
@@ -52,7 +66,7 @@
 				</p>
 				<p>					
 					<label>Choice #5</label>
-					<input type = "text" name = "choice4"/>
+					<input type = "text" name = "choice5"/>
 				</p>
 				<p>					
 					<label>Correct choice #</label>
