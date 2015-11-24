@@ -1,4 +1,19 @@
 <?php include 'database.php'; ?>
+<?php
+	//get the total numer of questions
+	$query = "SELECT * FROM `questions`";
+			
+	//Get result
+	$result = $mysqli->query($query) or die($mysqli->error.__LINE__);
+	
+	//sum total number of rows
+	$total = $result->num_rows;
+
+	//output number of estimated minutes quiz will take assuming each
+	//question takes 30 seconds
+
+	$estimated_time = ($total * 30) / 60;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,13 +33,13 @@
 		<p>This is a multiple choice quiz to test your knowledge of php</p>
 		<ul>
 			<li>
-				<strong>Number of Questions:</strong>
+				<strong>Number of Questions: <?php echo $total ?></strong>
 			</li>
 			<li>
-				<strong>Type:</strong>
+				<strong>Type: Multiple Choice </strong>
 			</li>
 			<li>
-				<strong>Estimated Time:</strong>
+				<strong>Estimated Time: <?php echo $estimated_time.' minutes' ?></strong>
 			</li>
 		</ul>
 		<a href = "question.php?n=1" class = "start">Start</a>
