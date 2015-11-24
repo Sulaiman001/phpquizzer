@@ -1,3 +1,14 @@
+<?php include 'database.php'; ?>
+
+
+<?php 
+	if (isset($_POST['submit'])){
+		echo 'Form was submitted';
+	}
+
+
+ ?> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +25,7 @@
 	<main>
 		<div class = "container">
 			<h2>Add a Question</h2>
-			<form method = "post" action="add.php">
+			<form method = "post" action="admin.php">
 				<p>					
 					<label>Question Number</label>
 					<input type = "number" name = "question_number"/>
@@ -47,7 +58,7 @@
 					<label>Correct choice #</label>
 					<input type = "number" name = "correct_choice"/>
 				</p>
-				<input type = "submit" value = "Add Question" class = ""
+				<input type = "submit" name = "submit" value = "Add Question" class = "" />
 			</form>
 		
 	</main>
