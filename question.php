@@ -1,3 +1,8 @@
+<?php include 'database.php'; ?>
+<?php
+	//Set question number
+	$number = (int) $_GET['n'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
